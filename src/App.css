@@ -1,0 +1,148 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  transition: background-color 2s;
+
+}
+.App__title {
+  color: #fff;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-size: 50px;
+  -webkit-text-stroke: .5px black;
+
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  background-color: #fff;
+  max-width: 600px;
+  min-height: 350px;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.966);
+  border: 3px solid white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: box-shadow 600ms ease,transform 600ms ease,background-image 1s;
+}
+.card:hover {
+  box-shadow: 0 0 20px #dddddd;
+  transform: translateY(-0.3%);
+}
+.opacityDiv {
+  position: absolute;
+  background-color: rgba(51, 51, 51, 0.75);
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.card__paragraph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.card__icon {
+  font-size: 80px;
+  padding-right: 10px;
+  -webkit-text-stroke: .3px black;
+}
+.card__quote {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 900;
+  -webkit-text-stroke: .3px black;
+}
+.card__author {
+  position: relative;
+  z-index: 2;
+  text-align: end;
+  margin: 10px 0;
+  font-weight: 900;
+  -webkit-text-stroke: .3px black;
+}
+.card__btn {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-left: auto;
+  width: 50px;
+  aspect-ratio: 1;
+  border: .5px solid white;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card__btn:hover {
+  box-shadow: 0 0 20px #dddddd;
+
+  transform: scale(1.05);
+  transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.card--animation {
+  animation-duration: 3s;
+  animation-name: slideout;
+}
+
+@keyframes slideout {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+.card--animation2 {
+  animation-duration: .6s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(200vw);
+    /* width: 300% */
+  }
+
+  to {
+    transform: translateX(0);
+    /* width: 100%; */
+  }
+}
+
+@media (max-width: 700px){
+  .App__title {
+    font-size: 30px;
+    padding: 0 25px;
+  }
+  .card {
+    margin: 0 25px;
+  }
+  .card__icon {
+    font-size: 40px;
+  }
+  .card__quote {
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
