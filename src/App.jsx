@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import Quotes from "./components/Quotes";
 import data from "./json/quote.json";
@@ -12,35 +12,23 @@ function App() {
   const [quote, setQuote] = useState(getRandomFromArray(data));
   const [colorsArray, setColorsArray] = useState(getRandomFromArray(colors));
 
-  // useEffect(() => {
-  //   setClassName("");
-  // }, [quote]);
-
   const handleClick = () => {
     let animationStatus = 0;
     const intervalAnimation = setInterval(() => {
       if (animationStatus == 0) {
         setClassName(className + " card--animation  ");
-        console.log("1");
       }
       if (animationStatus == 2) {
-        console.log("2");
         setQuote(getRandomFromArray(data));
         setColorsArray(getRandomFromArray(colors));
         setClassName(className + " card--animation2 ");
       }
       if (animationStatus == 3) {
-        console.log("3");
         setClassName("card");
       }
       if (animationStatus == 4) clearInterval(intervalAnimation);
       animationStatus += 1;
     }, 600);
-    // setClassName(className+" card--animation");
-    // setTimeout(() => {
-    //   setQuote(getRandomFromArray(data));
-    //   setColorsArray(getRandomFromArray(colors));
-    // }, 1500);
   };
 
   const backgroundImage =  (author) => {

@@ -1,7 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import data from "../json/quote.json";
 import Button from "./Button";
 import Paragraph from "./Paragraph";
 
